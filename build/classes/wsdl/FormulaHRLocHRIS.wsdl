@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetBulkEmpDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APPID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpType" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBulkEmpDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBulkEmpDetailsResult" type="tns:ArrayOfEmpLocDetails"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmpLocDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmpLocDetails" nillable="true" type="tns:EmpLocDetails"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmpLocDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Empid" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Passportplace" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Passportvalidity" nillable="true" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Passportname" type="s:string"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Passportissudon" nillable="true" type="s:dateTime"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DOJ" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Business" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EmploymentStatus" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="LocationCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="functionname" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Jobcode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Designation" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Positiontitle" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="GradeCategory" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Grade" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenter" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeCategory" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ManagerId" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Manager" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SkipLevelId" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SkipLevelManager" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISDEPTHEAD" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Vendorname" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="VendorEmpid" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmpDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APPID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Empid" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpDetailsResult" type="tns:EmpLocDetails"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBulkEmpDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBulkEmpDetails"/>
+  </wsdl:message>
+  <wsdl:message name="GetBulkEmpDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBulkEmpDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmpDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpDetails"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmpDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpDetailsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="FormulaHRLocHRISSoap">
+    <wsdl:operation name="GetBulkEmpDetails">
+      <wsdl:input message="tns:GetBulkEmpDetailsSoapIn"/>
+      <wsdl:output message="tns:GetBulkEmpDetailsSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpDetails">
+      <wsdl:input message="tns:GetEmpDetailsSoapIn"/>
+      <wsdl:output message="tns:GetEmpDetailsSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FormulaHRLocHRISSoap" type="tns:FormulaHRLocHRISSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBulkEmpDetails">
+      <soap:operation soapAction="http://tempuri.org/GetBulkEmpDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpDetails">
+      <soap:operation soapAction="http://tempuri.org/GetEmpDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FormulaHRLocHRISSoap12" type="tns:FormulaHRLocHRISSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetBulkEmpDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetBulkEmpDetails" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetEmpDetails" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FormulaHRLocHRIS">
+    <wsdl:port name="FormulaHRLocHRISSoap" binding="tns:FormulaHRLocHRISSoap">
+      <soap:address location="https://wsr.formulahr.com/services/FormulaHRLocHRIS.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="FormulaHRLocHRISSoap12" binding="tns:FormulaHRLocHRISSoap12">
+      <soap12:address location="https://wsr.formulahr.com/services/FormulaHRLocHRIS.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
