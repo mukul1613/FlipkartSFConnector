@@ -1057,7 +1057,7 @@ public class BulkEmpDetailsImpl implements Job {
 				logger.debug("GradeCategory::" + GradeCategory);
 				CostCenter = reader.get("CostCenter");
 				if (CostCenter.contains("(")) {
-					String ccenter = CostCenter.substring(CostCenter.indexOf('('));
+					String ccenter = CostCenter.substring(CostCenter.lastIndexOf('('));
 					String ccenter1 = ccenter.substring(1, ccenter.indexOf(')'));
 					empDetails.setCostCenter(ccenter1);
 				} else{

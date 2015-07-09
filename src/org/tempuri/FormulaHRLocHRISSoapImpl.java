@@ -215,7 +215,7 @@ public class FormulaHRLocHRISSoapImpl implements
 					if(nodeString.contains("custom10")){
 						String custom10=object.getNodeValue();							
 						if(custom10.contains("(")){
-							String costCenter=custom10.substring(custom10.indexOf('('));
+							String costCenter=custom10.substring(custom10.lastIndexOf('('));
 							String ccenter1 = costCenter.substring(1, costCenter.indexOf(')'));
 							empDetails.setCostCenter(ccenter1);
 						}
